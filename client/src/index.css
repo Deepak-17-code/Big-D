@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #e5ecff;
+  background-color: #0a1324;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: #e5ecff;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(40, 96, 217, 0.35), transparent 30%),
+    radial-gradient(circle at 88% 8%, rgba(86, 146, 255, 0.2), transparent 28%),
+    linear-gradient(180deg, #0a1324 0%, #070f1c 100%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Sora', sans-serif;
+}
+
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 16% 16%, rgba(47, 119, 255, 0.24), transparent 24%),
+    radial-gradient(circle at 80% 42%, rgba(27, 55, 114, 0.28), transparent 32%),
+    radial-gradient(circle at 52% 86%, rgba(94, 166, 255, 0.16), transparent 30%);
+}
+
+.glass-card {
+  border: 1px solid rgba(63, 93, 156, 0.55);
+  background: linear-gradient(135deg, rgba(14, 24, 45, 0.9), rgba(8, 15, 29, 0.86));
+  border-radius: 1rem;
+  padding: 1rem;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(47, 119, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(27, 55, 114, 0.32), transparent 32%),
+    linear-gradient(180deg, #0a1324 0%, #070f1c 100%);
+}
+
+.auth-card {
+  width: min(100%, 460px);
+  border: 1px solid rgba(63, 93, 156, 0.6);
+  background: rgba(10, 18, 36, 0.84);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 30px 100px rgba(5, 10, 20, 0.45);
+}
+
+.auth-input {
+  margin-top: 0.45rem;
+  width: 100%;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(67, 97, 163, 0.88);
+  background: rgba(12, 22, 43, 0.9);
+  color: #e5ecff;
+  padding: 0.7rem 0.85rem;
+  outline: none;
+}
+
+.auth-input:focus {
+  border-color: rgba(94, 166, 255, 0.95);
+  box-shadow: 0 0 0 2px rgba(94, 166, 255, 0.25);
+}
+
+.auth-button {
+  width: 100%;
+  border: 0;
+  border-radius: 0.8rem;
+  padding: 0.78rem 1rem;
+  font-weight: 600;
+  color: #eff6ff;
+  background: linear-gradient(135deg, #2f77ff, #1e40af);
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(47, 119, 255, 0.3);
+}
+
+.auth-button:hover {
+  filter: brightness(1.05);
+}
+
+.theme-fitness .bg-slate-950,
+.theme-fitness .bg-slate-900,
+.theme-fitness .bg-slate-800 {
+  background-color: #0d172d !important;
+}
+
+.theme-fitness .bg-slate-950\/70,
+.theme-fitness .bg-slate-950\/60,
+.theme-fitness .bg-slate-950\/50,
+.theme-fitness .bg-slate-900\/60,
+.theme-fitness .bg-slate-900\/40,
+.theme-fitness .bg-slate-900\/80,
+.theme-fitness .bg-slate-800\/70 {
+  background-color: rgba(13, 23, 45, 0.9) !important;
+}
+
+.theme-fitness .border-slate-800,
+.theme-fitness .border-slate-800\/70,
+.theme-fitness .border-slate-700,
+.theme-fitness .border-slate-700\/70,
+.theme-fitness .border-slate-600 {
+  border-color: #31456f !important;
+}
+
+.theme-fitness .text-slate-100,
+.theme-fitness .text-slate-200,
+.theme-fitness .text-slate-300,
+.theme-fitness .text-slate-400,
+.theme-fitness .text-slate-500 {
+  color: #a8b8d8 !important;
+}
+
+.theme-fitness .text-white {
+  color: #eff6ff !important;
+}
+
+.theme-fitness .text-red-300,
+.theme-fitness .text-red-200,
+.theme-fitness .text-rose-300,
+.theme-fitness .text-rose-200 {
+  color: #6eb5ff !important;
+}
+
+.theme-fitness .hover\:bg-slate-900\/80:hover,
+.theme-fitness .hover\:bg-slate-800\/70:hover,
+.theme-fitness .hover\:bg-slate-800:hover {
+  background-color: #132346 !important;
+}
+
+.theme-fitness .hover\:border-red-500\/70:hover,
+.theme-fitness .hover\:border-rose-500:hover,
+.theme-fitness .hover\:border-red-500:hover {
+  border-color: #2f77ff !important;
+}
+
+.theme-fitness .bg-red-500,
+.theme-fitness .bg-rose-500,
+.theme-fitness .from-red-500,
+.theme-fitness .from-rose-800,
+.theme-fitness .to-rose-900,
+.theme-fitness .to-rose-800 {
+  background-image: linear-gradient(135deg, #2f77ff, #1e40af) !important;
+}
+
+.theme-fitness .bg-red-500\/30,
+.theme-fitness .bg-rose-900\/40,
+.theme-fitness .bg-red-950\/20 {
+  background-color: rgba(47, 119, 255, 0.16) !important;
+}
+
+.theme-fitness .border-red-500,
+.theme-fitness .border-red-500\/70,
+.theme-fitness .border-red-800\/70,
+.theme-fitness .border-rose-500 {
+  border-color: #2f77ff !important;
+}
+
+.theme-fitness .text-red-300\/90 {
+  color: #6eb5ff !important;
+}
