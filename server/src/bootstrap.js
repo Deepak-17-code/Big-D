@@ -17,7 +17,7 @@ export async function initializeServer() {
 
       const env = validateEnv(process.env)
 
-      if (!process.env.MONGO_URI) {
+      if (env.NODE_ENV !== 'production' && !process.env.MONGO_URI) {
         console.warn('MONGO_URI not set in server/.env, using local default mongodb://127.0.0.1:27017/hevyx')
       }
 

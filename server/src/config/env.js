@@ -2,9 +2,15 @@ const DEFAULT_MONGO_URI = 'mongodb://127.0.0.1:27017/hevyx'
 
 export function validateEnv(env) {
   const missing = []
+  const nodeEnv = env.NODE_ENV || 'development'
+  const isProduction = nodeEnv === 'production'
 
   if (!env.JWT_SECRET) {
     missing.push('JWT_SECRET')
+  }
+
+  if (isProduction && !env.MONGO_URI) {
+    missing.push('MONGO_URI')
   }
 
   if (missing.length > 0) {
@@ -18,6 +24,7 @@ export function validateEnv(env) {
   return {
     PORT: Number(env.PORT) || 5000,
     MONGO_URI: env.MONGO_URI || DEFAULT_MONGO_URI,
+    NODE_ENV: nodeEnv,
     hasCloudinary,
     hasOpenAI,
     hasGemini,
