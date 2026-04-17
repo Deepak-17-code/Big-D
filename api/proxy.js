@@ -1,11 +1,23 @@
-import app from '../server/src/app.js'
-import { initializeServer } from '../server/src/bootstrap.js'
-
 let startupPromise
+let appHandler
 
 export default async function handler(req, res) {
   try {
+    if (!appHandler) {
+      const [{ default: app }, { initializeServer }] = await Promise.all([
+        import('../server/src/app.js'),
+        import('../server/src/bootstrap.js'),
+      ])
+
+      appHandler = app
+
+      if (!startupPromise) {
+        startupPromise = initializeServer()
+      }
+    }
+
     if (!startupPromise) {
+      const { initializeServer } = await import('../server/src/bootstrap.js')
       startupPromise = initializeServer()
     }
 
@@ -19,7 +31,7 @@ export default async function handler(req, res) {
     const query = url.searchParams.toString()
     req.url = `/api${suffix}${query ? `?${query}` : ''}`
 
-    return app(req, res)
+    return appHandler(req, res)
   } catch (error) {
     console.error('Failed to initialize API proxy handler:', error.message)
 
