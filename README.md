@@ -36,6 +36,29 @@ Full-stack fitness tracking web app inspired by Hevy, built with React + Tailwin
 
 Client runs on http://localhost:5173 and server on http://localhost:5000.
 
+## Vercel Deployment
+
+This repo is configured to deploy as a single Vercel project:
+
+- The frontend builds from `client/dist`.
+- The Express API runs from the root `api/[...path].js` function.
+- The client uses `/api` automatically in production, so no extra API URL is required on Vercel.
+
+Set these environment variables in Vercel before deploying:
+
+- `JWT_SECRET`
+- `MONGO_URI`
+- Optional: `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`
+- Optional: `OPENAI_API_KEY` or `GEMINI_API_KEY`
+- Optional: `OPENAI_MODEL`, `GEMINI_MODEL`
+
+Recommended deploy flow:
+
+1. Import the repository root into Vercel.
+2. Let Vercel use the root `vercel.json` and `package.json`.
+3. Add the environment variables above in the Vercel dashboard.
+4. Deploy the project.
+
 ## API Routes
 
 - POST /api/auth/signup

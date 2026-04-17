@@ -5,7 +5,7 @@ export default function LandingPage() {
   const navigate = useNavigate()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
       {/* Navigation Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -107,7 +107,7 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-blue-600 py-16">
+      <section className="bg-linear-to-r from-indigo-600 to-blue-600 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-3xl font-bold text-white mb-4">
             Start Your Fitness Journey Today
