@@ -1,4 +1,4 @@
-# HevyX MERN Fitness Tracker
+# Big-D MERN Fitness Tracker
 
 Full-stack fitness tracking web app inspired by Hevy, built with React + Tailwind + Redux Toolkit and Node/Express/MongoDB.
 
